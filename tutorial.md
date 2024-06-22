@@ -91,10 +91,14 @@ Here I am mounting my local directory /home/msmelyan/Tutorials/Inference/ as doc
 
    The TensorRT-LLM repository contains a wide variety of predefined model architectures. For this post, you use the included Llama model definition instead of writing your own. This is a minimal example of some of the optimizations available in TensorRT-LLM.
 
+   We will do our work from /home/msmelyan/Tutorials/Inference/TensorRT-LLM/examples/llama directory.
+
    ```
    # Log in to huggingface-cli
    # You can get your token from huggingface.co/settings/token
    huggingface-cli login --token *****
+
+   cd /home/msmelyan/Tutorials/Inference/TensorRT-LLM/examples/llama directory:
  
    # Build the LLaMA 7B model using a single GPU and BF16.
    python3 convert_checkpoint.py --model_dir ./Llama-2-7b-chat-hf \
@@ -121,7 +125,7 @@ Here I am mounting my local directory /home/msmelyan/Tutorials/Inference/ as doc
 config.json: Includes detailed information about the model, like its general structure and precision, as well as information about which plug-ins were incorporated into the engine.
    - model.cache: Caches some of the timing and optimization information from model compilation, making successive builds quicker.
 
-7. Run the model
+8. Run the model
 
    So, now that you’ve got your model engine, what can you do with it?
 
